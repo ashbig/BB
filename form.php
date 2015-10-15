@@ -1,10 +1,10 @@
   <?php
-
+    // create an empty php array to store our values
     if (isset($_POST['submit'])) {
     $cell = $_POST["cell"];
     $tissue = $_POST["tissue"];
-	$organism = $_POST["organism"];
-	$temp = $_POST["temp"];
+    $organism = $_POST["organism"];
+    $temp = $_POST["temp"];
     $print = $_POST["print"];
     }
     if (!isset($_POST['submit'])) { // if page is not submitted to itself echo the form
@@ -31,6 +31,20 @@
 					High Grade<input type="radio" value="High" name="print"> Low Grade<input type="radio" value="Low" name="print"><br />
 					<p></br><input type="submit" value="submit" name="submit"></p>
 				</form>
+			        <!-- Jquery upload tool provided by igoolab -->
+				<p><strong>Or just upload an .stl !</strong></p>
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+				<script type="text/javascript" src="js/jquery.html5uploader.min.js"></script>
+				<script type="text/javascript">
+					$(function() {
+					$("#dropbox, #multiple").html5Uploader({
+						name: "bio",
+						postUrl: "bots.aspx"	
+					});
+					});
+				</script>
+				<div id="dropbox"></div>
+				<input id="multiple" type="file" multiple>
 		</div>
 	</div>
 
